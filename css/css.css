@@ -1,0 +1,25 @@
+.style-tabela table{ float:left; border:1px solid #ccc; border-bottom:0; border-right:0; font-size:0.8em; }
+.style-tabela table tr td  { padding:0.5em; border:1px solid #ccc; border-top:0; border-left:0;}
+.style-tabela table td.top { background-color:#5F9EA0; color:#fff; font-size:1.2em;}
+.style-tabela table td.top.center {text-align: center;}
+.style-tabela table td.total { text-align:left; font-weight: bold;}
+.style-tabela table td.top-toltip{ background-color:#207d97; height:25px;  color:#fff; font-size:16px;}
+.style-tabela tbody tr td    {padding:0.3em; border:1px solid #ccc; border-top:0; border-left:0;}
+.style-tabela tbody tr       {background-color:#fff; color:#666;}
+.style-tabela tbody tr:hover {background-color:#f4f4f4; color:#00bcc4;}
+ 
+
+.style-tabela tbody tr.mensagemAlerta { background-color:#fdeeef; color:#bf303c;}
+
+.style-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.style-tabela table {
+    border-collapse: collapse;
+    width: 50%;
+
+}

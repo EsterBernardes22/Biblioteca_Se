@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("uNilXYooAYBR4Cj4q");
+
+        function validarSenha() {
+            var senhaDigitada = document.getElementById("senha").value;
+            var senhaCorreta = "Senai125@"; 
+            if (senhaDigitada === senhaCorreta) {
+                window.location.href = 'index.html';
+            } else {
+                alert("Senha incorreta. Tente novamente ou clique em 'Esqueceu a senha?'");
+            }
+        }
+
+        function recuperarSenha() {
+            var userEmail = document.getElementById("usuario").value;
+
+            if (!userEmail) {
+                alert("Por favor, insira seu endereço de e-mail.");
+                return;
+            }
+
+            var templateParams = {
+                to_email: userEmail,
+                message: "Sua senha de recuperação é: SenaiRecuperacao123"
+            };
+
+            emailjs.send("service_16hnx3l","template_z442yt2")
+
+                .then(function(response) {
+                    console.log("E-mail enviado com sucesso:", response);
+                    alert("Um e-mail de recuperação foi enviado para o endereço fornecido.");
+                }, function(error) {
+                    console.log("Erro ao enviar e-mail:", error);
+                    alert("Houve um erro ao enviar o e-mail de recuperação. Tente novamente mais tarde.");
+                });
+        }
+    </script>
+</head>
+<body>
+
+    <center>
+        <div class="container">
+            <div class="card">
+                <a class="login">LOGIN</a>
+                <div class="inputBox">
+                    <input type="text" id="usuario" required="required">
+                    <span class="user">Username</span>
+                </div>
+
+                <div class="inputBox">
+                    <input type="password" id="senha" required="required">
+                    <span>Password</span>
+                </div>
+
+                <button class="enter" onclick="validarSenha()">Enter</button>
+                <a href="#" onclick="recuperarSenha()">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </center>
+
+</body>
+</html>
